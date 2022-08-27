@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.RadioButton;
@@ -24,9 +24,8 @@ public class BasicOperationsController implements Initializable {
 
 	    @FXML
 	    private ToggleGroup curvesize;
-
 	   
-
+	
 	    @FXML
 	    private RadioButton  large;
 
@@ -39,6 +38,7 @@ public class BasicOperationsController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
 		// TODO Auto-generated method stub
 		
 	}
@@ -59,9 +59,15 @@ public class BasicOperationsController implements Initializable {
     		
     	} else if(large.isSelected()){
     		
-    		
     		JavaFxmlLoader2 object = new JavaFxmlLoader2();
-    		Pane view = object.getpage("simple view");
+    		Pane view = object.getpage("menu");
+    		
+            EccoverfinitefieldController controller1 = new EccoverfinitefieldController();
+   		    controller1.val_a.setText("3HADOULLL3");
+    		
+    		
+    		
+    		
     		
     		mainPane.setCenter(view);
     		

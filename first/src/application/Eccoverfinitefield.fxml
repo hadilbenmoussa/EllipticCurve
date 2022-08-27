@@ -1,23 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="703.0" style="-fx-background-color: #CD9B5D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EccoverfinitefieldController">
    <children>
-      <Label layoutX="14.0" layoutY="12.0" prefHeight="18.0" prefWidth="141.0" text="Elliptic Curve Attributes" translateY="100.0" />
-      <Line endX="359.0" endY="-10.5" layoutX="226.0" layoutY="32.0" startX="-71.0" startY="-10.5" translateY="100.0" />
-      <Line endX="499.0" endY="-10.5" layoutX="87.0" layoutY="250.0" startX="-74.0" startY="-10.5" translateY="100.0" />
-      <Line endX="-69.5" endY="242.0" layoutX="656.0" layoutY="-3.0" startX="-70.5" startY="25.0" translateY="100.0" />
-      <Line endX="-113.5" endY="236.0" layoutX="126.0" layoutY="3.0" startX="-114.5" startY="22.0" translateY="100.0" />
-      <Label prefHeight="120.0" prefWidth="903.0" text="Elliptiic Curve Calculations" translateY="-40.0">
+      <Label layoutX="14.0" layoutY="5.0" text="Elliptic" textFill="WHITE">
          <font>
-            <Font name="Arial Black" size="27.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Text layoutX="17.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the type of curve and fill in the curve attributes.It's then possible to perform calculations on the curve (addition of two points and scalar multiplication of a point)." wrappingWidth="564.13671875" />
+      <Label layoutX="83.0" layoutY="5.0" text="Curve" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="33.0" text="curve attributes" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Line endX="91.79998779296875" endY="313.0" layoutX="305.0" layoutY="265.0" startX="396.00006103515625" startY="-61.599998474121094" stroke="#faf4f4" />
+      <Line endX="103.99996948242188" endY="289.0" layoutX="331.0" layoutY="287.0" startX="370.70703125" startY="-37.70710754394531" stroke="#faf4f4" />
+      <Line endX="211.9857177734375" endY="169.70706176757812" layoutX="406.0" layoutY="407.0" startX="293.70721435546875" startY="58.292877197265625" stroke="#faf4f4" />
+      <Line endX="221.27862548828125" endY="157.70712280273438" layoutX="416.0" layoutY="418.0" startX="284.41424560546875" startY="74.38583374023438" stroke="#faf4f4" />
+      <JFXButton layoutX="67.0" layoutY="239.0" style="-fx-background-color: #FFFF;" text="Generate random point" textFill="#052f71">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="219.0" layoutY="239.0" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: #FFFF;" text="Use generator G" textFill="#052f71">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="67.0" layoutY="335.0" style="-fx-background-color: #FFFF;" text="Generate random point" textFill="#052f71">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="219.0" layoutY="335.0" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: #FFFF;" text="Use generator G" textFill="#052f71">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="10.0" layoutY="56.0" text="a =" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="86.0" text="b =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="113.0" text="p =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="141.0" text="Base point G" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="160.0" text="x =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="188.0" text="y =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="2.0" layoutY="206.0" prefHeight="18.0" prefWidth="74.0" text="Order " textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="215.0" prefHeight="18.0" prefWidth="74.0" text="of G =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="269.0" text="x =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="294.0" text="y =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="357.0" text="x =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="455.0" text="x =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="395.0" text="y =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="482.0" text="y =" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="241.0" text="Point P" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="337.0" text="Point Q" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="422.0" text="Point R" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="val_a" layoutX="53.0" layoutY="54.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="val_b" layoutX="53.0" layoutY="82.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="val_mod" layoutX="53.0" layoutY="109.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Gx" layoutX="53.0" layoutY="156.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Gy" layoutX="53.0" layoutY="184.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Px" layoutX="53.0" layoutY="265.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Py" layoutX="53.0" layoutY="290.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="order" layoutX="53.0" layoutY="211.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Qx" layoutX="56.0" layoutY="362.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Qy" layoutX="56.0" layoutY="391.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Rx" layoutX="57.0" layoutY="451.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="Ry" layoutX="57.0" layoutY="478.0" prefHeight="26.0" prefWidth="290.0" />
+      <Line endX="105.60003662109375" endY="0.19999313354492188" layoutX="236.0" layoutY="42.0" startX="-115.59999084472656" startY="0.19999313354492188" stroke="WHITE" />
+      <Line endX="-113.5999755859375" endY="193.40000915527344" layoutX="457.0" layoutY="44.0" startX="-115.59999084472656" startY="0.19999313354492188" stroke="WHITE" />
+      <Line endX="-120.00001525878906" endY="191.2929229736328" layoutX="120.0" layoutY="44.0" startX="-120.00001525878906" startY="0.09290695190429688" stroke="WHITE" />
+      <Line endX="113.39996337890625" endY="-0.5999908447265625" layoutX="230.0" layoutY="238.0" startX="-230.70713806152344" startY="-1.9999847412109375" stroke="WHITE" />
+      <Line endX="-17.700002670288086" endY="0.19999313354492188" layoutX="34.0" layoutY="43.0" startX="-34.500022888183594" startY="0.5929069519042969" stroke="WHITE" />
+      <Line endX="-113.5999755859375" endY="176.39999389648438" layoutX="457.0" layoutY="140.0" startX="-112.89288330078125" startY="98.10713195800781" stroke="WHITE" />
+      <Line endX="-438.0" endY="98.10711669921875" layoutX="437.0" layoutY="218.0" startX="-96.41424560546875" startY="98.10713195800781" stroke="WHITE" />
+      <Line endX="-127.70709228515625" endY="119.81423950195312" layoutX="129.0" layoutY="197.0" startX="-127.70707702636719" startY="54.69291687011719" stroke="WHITE" />
+      <Line endX="-438.0" endY="98.10711669921875" layoutX="440.0" layoutY="152.0" startX="-432.0" startY="98.19999694824219" stroke="WHITE" />
+      <Line endX="-403.0" endY="98.19999694824219" layoutX="470.0" layoutY="152.0" startX="-414.0" startY="98.19999694824219" stroke="WHITE" />
+      <Line endX="-261.0" endY="88.19999694824219" layoutX="480.0" layoutY="162.0" startX="-278.60003662109375" startY="88.19999694824219" stroke="WHITE" />
+      <Line endX="-453.0" endY="98.10711669921875" layoutX="451.0" layoutY="319.0" startX="-107.2142333984375" startY="98.10711669921875" stroke="WHITE" />
+      <Line endX="-453.0" endY="98.10711669921875" layoutX="449.0" layoutY="406.0" startX="-103.70001220703125" startY="97.79290771484375" stroke="WHITE" />
+      <Line endX="-118.5999755859375" endY="173.39996337890625" layoutX="465.0" layoutY="244.0" startX="-118.7142333984375" startY="104.89288330078125" stroke="WHITE" />
+      <Line endX="-261.0" endY="88.19999694824219" layoutX="479.0" layoutY="260.0" startX="-278.60003662109375" startY="88.19999694824219" stroke="WHITE" />
+      <Line endX="-263.2142333984375" endY="89.39288330078125" layoutX="610.0" layoutY="259.0" startX="-278.60003662109375" startY="88.19999694824219" stroke="WHITE" />
+      <Line endX="-264.0" endY="87.19998168945312" layoutX="331.0" layoutY="259.0" startX="-273.6000061035156" startY="87.19998168945312" stroke="WHITE" />
+      <Line endX="-299.0" endY="86.19998168945312" layoutX="299.0" layoutY="260.0" startX="-292.0" startY="86.19998168945312" stroke="WHITE" />
+      <Line endX="-128.5" endY="117.60711669921875" layoutX="128.0" layoutY="299.0" startX="-128.49998474121094" startY="46.699981689453125" stroke="WHITE" />
+      <Line endX="-445.0" endY="98.20001220703125" layoutX="499.0" layoutY="333.0" startX="-151.70001220703125" startY="98.20001220703125" stroke="WHITE" />
+      <Line endX="-118.5999755859375" endY="155.39996337890625" layoutX="466.0" layoutY="349.0" startX="-118.20001220703125" startY="82.70001220703125" stroke="WHITE" />
+      <Line endX="-129.0" endY="120.814208984375" layoutX="129.0" layoutY="384.0" startX="-129.0" startY="49.69287109375" stroke="WHITE" />
+      <Line endX="-302.0" endY="86.20001220703125" layoutX="308.0" layoutY="345.0" startX="-309.9999694824219" startY="86.19998168945312" stroke="WHITE" />
    </children>
 </AnchorPane>
