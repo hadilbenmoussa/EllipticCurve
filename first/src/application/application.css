@@ -1,0 +1,51 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.VBox{
+	-fx-background-color:#202940;
+}
+.VBox2{
+	-fx-background-color:#2F3249;
+}
+
+
+.button{
+	-fx-background-color :#2F3249 ;
+	  -fx-font-family:courier_new;   
+      -fx-text-fill:White;  
+      -fx-font-size:22;  
+}
+
+.button:hover{
+	-fx-background-color : #202940;
+	  
+      -fx-text-fill:#56E6DA;  
+      -fx-font-size:24;  
+	
+}
+
+.button:pressed{
+	-fx-background-color :#202940;
+	 -fx-text-fill:#56E6DA;  
+      -fx-font-size:24;  
+}
+
+.back{
+	-fx-background-color:#202940;
+}
+.texty{
+	 -fx-font-family:courier_new;   
+      -fx-text-fill:White;  
+      -fx-font-size:22;  
+}
+.texty:hover{
+	   -fx-text-fill:#56E6DA;  
+      -fx-font-size:24;  
+	
+	
+}
+
+.texty:pressed{
+	   -fx-text-fill:#56E6DA;  
+      -fx-font-size:24;  
+	
+	
+}
