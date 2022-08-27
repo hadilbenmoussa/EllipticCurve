@@ -60,7 +60,7 @@ public class BasicOperationsController implements Initializable {
     	} else if(large.isSelected()){
     		
     		JavaFxmlLoader2 object = new JavaFxmlLoader2();
-    		Pane view = object.getpage("");
+    		Pane view = object.getpage("Eccoverfinitefield");
     		
             EccoverfinitefieldController controller1 = new EccoverfinitefieldController();
    		    controller1.val_a.setText("3HADOULLL3");

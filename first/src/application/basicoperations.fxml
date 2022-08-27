@@ -24,7 +24,7 @@
                         <Insets />
                      </VBox.margin>
                      <image>
-                        <Image url="@../../../../Downloads/icons8-settings-50.png" />
+                        <Image url="@../../../../../Downloads/icons8-settings-50.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="17.0" prefWidth="88.0" text="Settings" textFill="WHITE">
