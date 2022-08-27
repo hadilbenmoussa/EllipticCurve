@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="703.0" style="-fx-background-color: #CD9B5D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EccoverfinitefieldController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="783.0" styleClass="VBox" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EccoverfinitefieldController">
    <children>
       <Label layoutX="14.0" layoutY="5.0" text="Elliptic" textFill="WHITE">
          <font>
@@ -28,26 +27,6 @@
       <Line endX="103.99996948242188" endY="289.0" layoutX="331.0" layoutY="287.0" startX="370.70703125" startY="-37.70710754394531" stroke="#faf4f4" />
       <Line endX="211.9857177734375" endY="169.70706176757812" layoutX="406.0" layoutY="407.0" startX="293.70721435546875" startY="58.292877197265625" stroke="#faf4f4" />
       <Line endX="221.27862548828125" endY="157.70712280273438" layoutX="416.0" layoutY="418.0" startX="284.41424560546875" startY="74.38583374023438" stroke="#faf4f4" />
-      <JFXButton layoutX="67.0" layoutY="239.0" style="-fx-background-color: #FFFF;" text="Generate random point" textFill="#052f71">
-         <font>
-            <Font name="Calibri Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="219.0" layoutY="239.0" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: #FFFF;" text="Use generator G" textFill="#052f71">
-         <font>
-            <Font name="Calibri Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="67.0" layoutY="335.0" style="-fx-background-color: #FFFF;" text="Generate random point" textFill="#052f71">
-         <font>
-            <Font name="Calibri Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="219.0" layoutY="335.0" prefHeight="18.0" prefWidth="124.0" style="-fx-background-color: #FFFF;" text="Use generator G" textFill="#052f71">
-         <font>
-            <Font name="Calibri Bold" size="12.0" />
-         </font>
-      </JFXButton>
       <Label layoutX="10.0" layoutY="56.0" text="a =" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -133,7 +112,7 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="val_a" layoutX="53.0" layoutY="54.0" prefHeight="26.0" prefWidth="290.0" />
+      <TextField fx:id="val_a" accessibleRole="TEXT" layoutX="53.0" layoutY="54.0" prefHeight="26.0" prefWidth="290.0" />
       <TextField fx:id="val_b" layoutX="53.0" layoutY="82.0" prefHeight="26.0" prefWidth="290.0" />
       <TextField fx:id="val_mod" layoutX="53.0" layoutY="109.0" prefHeight="26.0" prefWidth="290.0" />
       <TextField fx:id="Gx" layoutX="53.0" layoutY="156.0" prefHeight="26.0" prefWidth="290.0" />

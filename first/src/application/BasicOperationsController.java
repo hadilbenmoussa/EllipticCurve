@@ -51,6 +51,8 @@ public class BasicOperationsController implements Initializable {
     	
     	//Option 2: call "isSelected" on each of the radio buttons
     	if(small.isSelected()){
+    		URL fileurl = BasicOperationsController.class.getResource("graph view"+".fxml");
+    		System.out.print(fileurl);
     		JavaFxmlLoader2 object = new JavaFxmlLoader2();
     		Pane view = object.getpage("graph view");
     		
@@ -58,19 +60,14 @@ public class BasicOperationsController implements Initializable {
     		
     		
     	} else if(large.isSelected()){
-    		
+    		URL fileurl = BasicOperationsController.class.getResource("Eccoverfinitefield"+".fxml");
+    		System.out.print(fileurl);
     		JavaFxmlLoader2 object = new JavaFxmlLoader2();
     		Pane view = object.getpage("Eccoverfinitefield");
-    		
-            EccoverfinitefieldController controller1 = new EccoverfinitefieldController();
-   		    controller1.val_a.setText("3HADOULLL3");
-    		
-    		
-    		
-    		
-    		
     		mainPane.setCenter(view);
-    		
+    		 EccoverfinitefieldController controller1 = new EccoverfinitefieldController();
+      		 controller1.curve.setText("3HADOULLL3");
+       		
     		
     	} }
 
