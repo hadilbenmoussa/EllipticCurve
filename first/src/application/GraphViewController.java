@@ -65,7 +65,7 @@ private void handleLineGraphButtonAction(final ActionEvent event) {
 	lineGraph.setVisible(true);
 	areaGraph.setVisible(false);
 	plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b));
-	plotLine(x -> -(Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b));
+	plotLine(x -> -(Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b)));
 	}
 private void plotLine(Function<Double, Double> function) {
 	if (lineGraph.isVisible()) {
