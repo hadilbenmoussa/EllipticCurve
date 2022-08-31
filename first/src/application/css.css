@@ -1,5 +1,5 @@
 #pane, .root, .split-pane{
-    -fx-background-color: #353434;
+    -fx-background-color: #2D3046;
    
 }
 .default-color0.chart-line-symbol {
@@ -29,7 +29,7 @@
 }
 
 .chart-plot-background {
-    -fx-background-color: #575758;
+    -fx-background-color: #8795E6;
     -fx-stroke: white;
 } 
 
@@ -53,7 +53,7 @@
 }
 
 .background {
-    -fx-background-color: #674A44;
+    -fx-background-color: #2D3046;
 
 }
 

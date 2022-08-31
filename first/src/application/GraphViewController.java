@@ -39,6 +39,9 @@ public class GraphViewController implements Initializable{
    
 	private MyGraph mathsGraph;
 	private MyGraph areaMathsGraph;
+	public Integer a;
+	public Integer b;
+
 
 
 @Override
@@ -49,12 +52,20 @@ public void initialize(final URL url, final ResourceBundle rb) {
 		
 	}
 
+
+
+public void set_a(Integer aval) {
+	this.a=aval;
+};
+public void set_b(Integer bval) {
+	this.a=bval;
+};
 @FXML
 private void handleLineGraphButtonAction(final ActionEvent event) {
 	lineGraph.setVisible(true);
 	areaGraph.setVisible(false);
-	plotLine(x ->Math.sqrt(5*Math.pow(x, 3)+15));
-	plotLine(x -> -(Math.sqrt(5*Math.pow(x, 3)+15)));
+	plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b));
+	plotLine(x -> -(Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b));
 	}
 private void plotLine(Function<Double, Double> function) {
 	if (lineGraph.isVisible()) {

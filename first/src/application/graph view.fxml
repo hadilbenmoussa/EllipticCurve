@@ -7,18 +7,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
+<AnchorPane maxHeight="661.0" maxWidth="949.0" minHeight="400.0" minWidth="600.0" prefHeight="631.0" prefWidth="978.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
    <children>
-    <AnchorPane layoutX="416.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="185.0">
+      <AnchorPane layoutY="-28.0" prefHeight="668.0" prefWidth="944.0">
          <children>
-            <VBox prefHeight="398.0" prefWidth="183.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="-7.0" prefHeight="400.0" prefWidth="420.0">
-         <children>
-            <LineChart fx:id="lineGraph" legendVisible="false" prefHeight="372.0" prefWidth="423.0" visible="false">
+            <LineChart fx:id="lineGraph" layoutX="-8.0" layoutY="30.0" legendVisible="false" prefHeight="638.0" prefWidth="949.0">
               <xAxis>
               	<NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" />
               </xAxis>
@@ -29,7 +23,7 @@
                  <Cursor fx:constant="CROSSHAIR" />
               </cursor>
             </LineChart>
-            <AreaChart fx:id="areaGraph" legendVisible="false" prefHeight="372.0" prefWidth="423.0">
+            <AreaChart fx:id="areaGraph" layoutX="9.0" layoutY="24.0" legendVisible="false" prefHeight="620.0" prefWidth="949.0" translateX="-23.0" visible="false">
               <xAxis>
               	<NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" />
               </xAxis>
@@ -40,10 +34,10 @@
                  <Cursor fx:constant="CROSSHAIR" />
               </cursor>
             </AreaChart>
-            <Button fx:id="lineGraphButton" layoutX="35.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleLineGraphButtonAction" prefHeight="29.0" prefWidth="185.0" text="Line Graph" />
-            <Button layoutX="224.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleAreaGraphButtonAction" prefHeight="29.0" prefWidth="185.0" text="Area Graph" />
             <Label layoutX="122.0" layoutY="6.0" prefHeight="17.0" prefWidth="109.0" text="Label" textFill="#f5f5f5" />
          </children>
       </AnchorPane>
+      <Button layoutX="194.0" layoutY="618.0" mnemonicParsing="false" onAction="#handleAreaGraphButtonAction" prefHeight="29.0" prefWidth="185.0" text="Area Graph" />
+      <Button fx:id="lineGraphButton" layoutY="618.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="185.0" text="Line Graph" />
    </children>
 </AnchorPane>

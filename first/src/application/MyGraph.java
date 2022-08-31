@@ -15,11 +15,11 @@ public class MyGraph {
 		for (double x = -range/2; x <= range/2; x = x + 0.001) {
 			plotPoint(x, function.apply(x), series);
 		}
-		for (double x = -range; x <= -range/2; x = x + 0.01) {
+		for (double x = -range; x <= -range/2; x = x + 0.1) {
 			
 			plotPoint(x, function.apply(x), series);
 		}
-		for (double x = range/2; x <= range; x = x + 0.01) {
+		for (double x = range/2; x <= range; x = x + 0.1) {
 			plotPoint(x, function.apply(x), series);
 			
 		}
