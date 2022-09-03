@@ -1,24 +1,22 @@
 package application;
 
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.event.*;
-
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -29,6 +27,12 @@ import javafx.scene.layout.Pane;
 
 
 public class BasicOperationsController implements Initializable {
+	@FXML
+    private TextField kval;
+	@FXML
+	    private TextField aval;
+	 @FXML
+	    private TextField bval;
 	 @FXML
 	    private RadioButton small;
 	@FXML
@@ -44,23 +48,17 @@ public class BasicOperationsController implements Initializable {
     @FXML
 	private BorderPane mainPane;
     @FXML 
+    private Button submit;
+    @FXML 
     private Label alabel;
     @FXML 
     private Label blabel;
     @FXML 
     private Label chooseplabel;
+ 
     @FXML 
-    private Label Pval;
-    @FXML 
-    private Label Qval;
-    @FXML 
-    private Label Rval;
-   @FXML 
-   private Spinner<Integer> aspinner;
-   @FXML 
-   private Spinner<Integer> bspinner;
-   @FXML 
-   private Spinner<Integer> kspinner;
+    private Label infotext;
+   
    @FXML 
    private Label curvattlabel;
    @FXML 
@@ -77,8 +75,7 @@ public class BasicOperationsController implements Initializable {
    public ChoiceBox<String> choicebox;
    public int k=0;
   
-   public Integer bval;
-public Integer aval;
+public javafx.scene.control.Button plot;
    private Parent root;
    private Pane view;
    public  EccoverfinitefieldController controller= new EccoverfinitefieldController();
@@ -97,80 +94,31 @@ public GraphViewController controllerg=new GraphViewController();
 
  
     @FXML
-    public void submitCurvesize(ActionEvent event) throws IOException {
+    public void submitCurvesize(ActionEvent event) {
+   
     	
     	//Option 2: call "isSelected" on each of the radio buttons
     	if(small.isSelected()){
-    		aspinner.setVisible(true);
+    		 submit.fire();
+    		aval.setVisible(true);
+    		bval.setVisible(true);
     		curvattlabel.setVisible(true);
     		multiplication.setVisible(true);
     		alabel.setVisible(true);
     		blabel.setVisible(true);
     		chooseplabel.setVisible(true);
-    		Pval.setVisible(true);
-    		Qval.setVisible(true);
-    		Rval.setVisible(true);
     		
-    		bspinner.setVisible(true);
-    		kspinner.setVisible(true);
+    		kval.setVisible(true);
+    		bval.setVisible(true);
+    		infotext.setVisible(true);
+    		submit.setVisible(true);
     		addition.setVisible(true);
     		k2spinner.setVisible(false);
     		addPQ.setVisible(false);
     		MultiplyPk.setVisible(false);
     		standardlabel.setVisible(false);
     		choicebox.setVisible(false);
-    		
-    		URL fileurl = BasicOperationsController.class.getResource("graph view"+".fxml");
-    		System.out.print(fileurl);
-    		JavaFxmlLoader2 object = new JavaFxmlLoader2();
-    		Pane view = object.getpage("graph view");
-    		 try {
-    		   		URL fileurlg = BasicOperationsController.class.getResource("graph view"+".fxml");
-    		    	 if (fileurl == null) {
-    		    	  throw new java.io.FileNotFoundException("Fxml file cannot be found");}
-    		    	  FXMLLoader loader=new FXMLLoader(fileurlg);
-    		    	  view = loader.load();
-    		          controllerg = loader.getController();}
-    		          catch (Exception e)
-      		    	{
-      		    	System.out.println("No Page"+"Please check fxml loader");
-      		    	
-      		    	}
-  
-    		mainPane.setCenter(view);
-   SpinnerValueFactory<Integer> valueFactory =new SpinnerValueFactory.IntegerSpinnerValueFactory(-30, 30);
-    valueFactory.setValue(0);
-    aspinner.setValueFactory(valueFactory);
-    aspinner.setEditable(true);
-    aspinner.valueProperty().addListener((obs, a1, aval) -> {
-    System.out.println("New value: "+aval);
-    controllerg.set_a(aval);
-    		    		  });
- 	SpinnerValueFactory<Integer> valueFactory2 =new SpinnerValueFactory.IntegerSpinnerValueFactory(-30, 30);
-    valueFactory2.setValue(0);
-    bspinner.setValueFactory(valueFactory2);
-    bspinner.setEditable(true);
-   bspinner.valueProperty().addListener((obs, b1, bval) -> {
-    System.out.println("New value: "+bval);
-    	controllerg.set_b(bval);	 
-   });	
-   
-  
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	}
-    		
- 
-    	
-				
-    		  
+    		}
     		
     		
  else if(large.isSelected()){
@@ -180,7 +128,7 @@ public GraphViewController controllerg=new GraphViewController();
     	 if (fileurl == null) {
     	  throw new java.io.FileNotFoundException("Fxml file cannot be found");}
     	  FXMLLoader loader=new FXMLLoader(fileurl);
-    	  view = loader.load();
+    	 view = loader.load();
           controller = loader.getController();
      		
       choicebox.setItems(FXCollections.observableArrayList("brainpoolP160r1","brainpoolP192r1","brainpoolP224r1","brainpoolP256r1","brainpoolP320r1","brainpoolP384r1",
@@ -190,7 +138,7 @@ public GraphViewController controllerg=new GraphViewController();
            @Override
       public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
     		 controller.i= number2;
-              controller.Px.clear();
+             controller.Px.clear();
     	     controller.Qx.clear();
     		 controller.Py.clear();
     		 controller.Qy.clear(); 
@@ -281,26 +229,28 @@ public GraphViewController controllerg=new GraphViewController();
     	}
     mainPane.setCenter(view);
  
-	curvattlabel.setVisible(false);
+    curvattlabel.setVisible(false);
 	multiplication.setVisible(false);
     		
-    k2spinner.setVisible(true);
-    addPQ.setVisible(true);
-    MultiplyPk.setVisible(true);
-    standardlabel.setVisible(true);
-    choicebox.setVisible(true);
+   k2spinner.setVisible(true);
+   addPQ.setVisible(true);
+   MultiplyPk.setVisible(true);
+   standardlabel.setVisible(true);
+   choicebox.setVisible(true);
 			
    alabel.setVisible(false);
    blabel.setVisible(false);
    chooseplabel.setVisible(false);
-   Pval.setVisible(false);
-   Qval.setVisible(false);
-   Rval.setVisible(false);
-   aspinner.setVisible(false);
-   bspinner.setVisible(false);
-   kspinner.setVisible(false);
+
+   submit.setVisible(false);
+   
+   
+   kval.setVisible(false);
+	infotext.setVisible(false);
+   
    addition.setVisible(false);
-    		
+     aval.setVisible(false);
+	bval.setVisible(false);	
     	
     	};}
     		
@@ -317,7 +267,14 @@ public GraphViewController controllerg=new GraphViewController();
 
 		controller.changelabel(curve.getOrder(),controller.order);
 		
-		}
+		};
+ public void handleoperation2(ActionEvent event) throws IOException{
+	 
+ if(addition.isSelected()) {
+ kval.setDisable(true);
+ }
+ else if (multiplication.isSelected()) {
+ kval.setDisable(false);}}
   public void handleoperation(ActionEvent event) throws IOException{
 	 
 	  if (addPQ.isSelected()) {
@@ -357,7 +314,71 @@ public GraphViewController controllerg=new GraphViewController();
  		} );}};
    
  
+public void Buttonsubmit(final ActionEvent event) {
+    		
+    		URL fileurl = BasicOperationsController.class.getResource("graph view"+".fxml");
+    		System.out.print(fileurl);
+    		JavaFxmlLoader2 object = new JavaFxmlLoader2();
+    		Pane view = object.getpage("graph view");
+    		 try {
+    		   		URL fileurlg = BasicOperationsController.class.getResource("graph view"+".fxml");
+    		    	 if (fileurl == null) {
+    		    	  throw new java.io.FileNotFoundException("Fxml file cannot be found");}
+    		    	  FXMLLoader loader=new FXMLLoader(fileurlg);
+    		    	  view = loader.load();
+    		          controllerg = loader.getController();
+    		          int a= Integer.parseInt(aval.getText());
+    		          int b=Integer.parseInt(bval.getText());
+    		          controllerg.set_a(a);
+    		          controllerg.set_b(b);
+    		          controllerg.mathsGraph.plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*x+b));
+    		          controllerg.mathsGraph.plotLine(x ->-(Math.sqrt(Math.pow(x, 3)+a*x+b)));
+    		          controllerg.cursorCoords = controllerg.createCursorGraphCoordsMonitorLabel(controllerg.lineGraph);
+    		          
+    		      
+    		         
+    		          if(addition.isSelected()) {controllerg.set_op(true);
+    		       
+    		          }
+    		          else if (multiplication.isSelected()) {	  controllerg.set_k(Integer.parseInt(kval.getText()));
+    		        	  controllerg.set_op(false);
+    		         };
+    		          System.out.println(controllerg.op);
+    		          System.out.println(controllerg.a);
+    		          System.out.println(controllerg.b);
+    		          
+    		          }
+    		 catch (Exception e)
+      		    	{
+      		    	System.out.println("No Page"+"Please check fxml loader");
+      		    	
+      		    	}
 
+  
+    		mainPane.setCenter(view);
+ 
+       
+       
+     
+
+           
+      
+       
+  
+     
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    		
+ 
+    	
+    	}		
+    		  
+    		
 }
 
  

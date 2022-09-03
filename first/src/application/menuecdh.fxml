@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1051.0" prefWidth="1607.0" styleClass="VBox" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuecdhController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1250.0" prefWidth="1450.0" styleClass="VBox" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuecdhController">
    <children>
       <ImageView fitHeight="55.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" translateX="400.0" translateY="290.0">
          <image>
-            <Image url="@../../../../Downloads/icons8-add-file-50.png" />
+            <Image url="@../images/icons8-add-file-50.png" />
          </image>
       </ImageView>
-      <Label prefHeight="41.0" prefWidth="115.0" styleClass="texty" stylesheets="@../application/application.css" textFill="#fffbfb" translateX="420.0" translateY="290.0">
+      <Hyperlink fx:id="hyp03" onAction="#hyp03OnAction" text="New" textFill="WHITE" translateX="420.0" translateY="295.0">
          <font>
-            <Font size="25.0" />
+            <Font size="26.0" />
          </font>
-         <graphic>
-            <Hyperlink fx:id="hyp03" onAction="#hyp03OnAction" text="New" textFill="WHITE">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Hyperlink>
-         </graphic>
-      </Label>
+      </Hyperlink>
    </children>
 </HBox>

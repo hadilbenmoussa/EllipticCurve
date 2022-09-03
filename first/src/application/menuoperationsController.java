@@ -1,3 +1,4 @@
+
 package application;
 import java.io.IOException;
 import java.net.URL;
@@ -8,9 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -27,6 +30,8 @@ public class menuoperationsController implements Initializable{
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("basicoperations.fxml"));
 	Parent root = loader.load();
     Stage stage= new Stage();
+    stage.initModality(Modality.WINDOW_MODAL);
+    stage.initOwner(((Node) event.getSource()).getScene().getWindow());
     stage.setScene(new Scene(root));
     stage.show();
 		;
@@ -36,6 +41,8 @@ public class menuoperationsController implements Initializable{
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("basicoperations.fxml"));
 	Parent root = loader.load();
     Stage stage= new Stage();
+    stage.initModality(Modality.WINDOW_MODAL);
+    stage.initOwner(((Node) event.getSource()).getScene().getWindow());
     stage.setScene(new Scene(root));
     stage.show();
 		;
@@ -46,6 +53,8 @@ private void sendtobasicoperations(ActionEvent event) throws IOException{
 		Parent root = loader.load();
 	    Stage stage= new Stage();
 	    stage.setScene(new Scene(root));
+	    stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
 	    stage.show();
 	    
 	}

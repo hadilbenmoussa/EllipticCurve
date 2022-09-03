@@ -13,21 +13,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
 			Parent root = FXMLLoader.load(getClass().getResource("/application/menu.fxml"));
-			
-			primaryStage.setResizable(true);
+	        primaryStage.setResizable(true);
 			Scene scene = new Scene(root,600,600);
-		
-			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			
-			
-			primaryStage.show();
+		    primaryStage.show();
 		} catch(Exception e) {
-			e.printStackTrace();
-		}
+			e.printStackTrace();}
 	}
 	
 	public static void main(String[] args) {

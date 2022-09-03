@@ -29,6 +29,7 @@ public class MainAppLauncher extends Application {
 package application;
 
 import java.math.BigInteger;
+import java.util.Random;
 
 /**
  * This class represents Elliptic Curve in Galois Field G(p). The equation will
@@ -383,7 +384,7 @@ public class EllipticCurve {
     /**
      * Multiply p1 to a scalar n. That is, perform addition n times. The
      * following method implements divide and conquer approach.
-     * 
+     *
      * @param p1
      * @param n
      * @return 
@@ -418,15 +419,39 @@ public class EllipticCurve {
     public BigInteger calculateRhs(BigInteger x) {
         return x.multiply(x).mod(p).add(a).multiply(x).add(b).mod(p);
     }
+    public ECPoint randompt() {
+    	ECPoint X = ECPoint.INFINTIY;
+    	
+    	while(X==ECPoint.INFINTIY) {
+    		
+        Random rand = new Random();
+    	BigInteger r = new BigInteger(p.bitLength(), rand);
+    	X=generatepoint(r);
+    	
+    	}
+    	return X;
+    };
    
+    public ECPoint generatepoint(BigInteger x) {
+	  
+	   BigInteger y2=calculateRhs(x);
+	   if (y2.compareTo(BigInteger.ZERO)>0) {
+		   return new ECPoint(x,y2.sqrt());
+	   }
+	   else return ECPoint.INFINTIY;
+   };
+   
+   
+  
     	
     
     
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-        // Check whether the standard curves' base points lie on the curve
+    /*    // Check whether the standard curves' base points lie on the curve
         System.out.println("NIST_P_192: " + EllipticCurve.brainpoolP160r1.isPointInsideCurve(EllipticCurve.brainpoolP160r1.getBasePoint()));
         System.out.println("NIST_P_224: " + EllipticCurve.brainpoolP192r1.isPointInsideCurve(EllipticCurve.brainpoolP192r1.getBasePoint()));
         System.out.println("NIST_P_256: " + EllipticCurve.brainpoolP224r1.isPointInsideCurve(EllipticCurve.brainpoolP224r1.getBasePoint()));
@@ -436,19 +461,27 @@ public class EllipticCurve {
         for (int i = 0; i < 100; ++i) {
             System.out.println("NIST_P_521 x " + i + " = " + EllipticCurve.brainpoolP320r1.multiply(EllipticCurve.brainpoolP320r1.getBasePoint(), i).toString(16));
         }
-    
+    */
+        
         
         
         // This computes (2, 4) + (5, 9) in y^2 = x^3 + x + 6 mod 11
         
-        ECPoint p = EllipticCurve.brainpoolP512r1.getBasePoint();
+        EllipticCurve ellipticCurve= new EllipticCurve(1,6,11);
+        ECPoint s = new ECPoint(BigInteger.valueOf(2),BigInteger.valueOf(4));
       
-        ECPoint q =EllipticCurve.brainpoolP512r1.getBasePoint();
+        ECPoint q = new ECPoint(BigInteger.valueOf(5),BigInteger.valueOf(9));
         
-        System.out.println(p + " + " + q + " = " + EllipticCurve.brainpoolP512r1.add(p, q));
-      /*  for (int i = 0; i < 20; ++i) {
-            System.out.println(p + " x " + i + " = " + e.multiply(p, i));
-        }*/
+        System.out.println(s + " + " + q + " = " + ellipticCurve.add(s, q));
+        int i=1;
+                   while(!(ellipticCurve.multiply(s, i).isPointOfInfinity())) {
+                	   
+        System.out.println(s + " x " + i + " = " + ellipticCurve.multiply(s, i));
+        i++;
+        };
+        System.out.println(ellipticCurve.randompt().toString());
+        ECPoint f = ellipticCurve.randompt();
+        System.out.println(ellipticCurve.isPointInsideCurve(f));
     }}
 
 

@@ -8,32 +8,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <children>
-      <BorderPane fx:id="borderpane" prefHeight="1080.0" prefWidth="1920.0">
-         <top>
-            <VBox prefHeight="29.0" prefWidth="1920.0" styleClass="VBox2" stylesheets="@../../bin/application/application.css" BorderPane.alignment="CENTER" />
-         </top>
+      <BorderPane fx:id="borderpane" prefHeight="670.0" prefWidth="1350.0">
          <left>
-            <VBox prefHeight="1051.0" prefWidth="313.0" styleClass="VBox2" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
+            <VBox prefHeight="670.0" prefWidth="313.0" styleClass="VBox2" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="105.0" prefWidth="313.0" text="ECC Calcualtions" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#handleButton1Action" prefHeight="92.0" prefWidth="337.0" text="ECC Calcualtions" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="120.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Arabic Typesetting" size="24.0" />
+                        <Font name="Calibri" size="34.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleButton1Action" prefHeight="115.0" prefWidth="313.0" text="ECDH Implementation" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="115.0" prefWidth="313.0" text="ECDH Implementation" textFill="WHITE">
                      <font>
-                        <Font name="Arabic Typesetting" size="20.0" />
+                        <Font name="Calibri" size="34.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#handleButton3Action" prefHeight="96.0" prefWidth="313.0" styleClass="VBox" stylesheets="@../application/application.css" text="About" textFill="WHITE">
                      <font>
-                        <Font name="Arabic Typesetting" size="31.0" />
+                        <Font name="Calibri" size="34.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
                   </Button>
                   <Label prefHeight="130.0" prefWidth="222.0" text="Released 2022" textFill="#878686c7" translateY="-140.0">
                      <font>
@@ -50,7 +56,7 @@
             </VBox>
          </left>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="VBox" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
+            <VBox prefHeight="670.0" prefWidth="1320.0" styleClass="VBox" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="10.0" layoutY="-7.0" prefHeight="35.0" prefWidth="105.0" styleClass="texty" stylesheets="@../application/application.css" text="History" textFill="WHITE" translateX="670.0" translateY="-74.0">
                      <font>

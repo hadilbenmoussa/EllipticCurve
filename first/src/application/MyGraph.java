@@ -50,7 +50,14 @@ public class MyGraph {
 			series.getData().add(new XYChart.Data<Double, Double>(Rx, 10.0));
 			graph.getData().add(series);
 	}
-	
+	public void plottangent(Integer a,Integer b,double Px,double Py) {
+		double dfp=(3*Px*Px+a)/(2*Math.sqrt(Math.pow(Px, 3)+a*Px+b));
+		 XYChart.Series<Double, Double> series = new XYChart.Series<Double, Double>();
+			series.getData().add(new XYChart.Data<Double, Double>(Px, Py));
+			series.getData().add(new XYChart.Data<Double, Double>(Px*(-10), Py+(-11)*dfp*Px));
+			series.getData().add(new XYChart.Data<Double, Double>(Px*10, Py+9*dfp*Px));
+			graph.getData().add(series);
+	}
 	
 
 	public void clear() {

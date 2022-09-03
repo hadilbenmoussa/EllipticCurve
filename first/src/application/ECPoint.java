@@ -12,12 +12,17 @@ import java.math.BigInteger;
 public class ECPoint {
     public BigInteger x;
     public BigInteger y;
+    public double xp;
+    public double yp;
     private boolean pointOfInfinity;
     
     public ECPoint() {
         this.x = this.y = BigInteger.ZERO;
         this.pointOfInfinity = false;
     }
+    public ECPoint(double xp, double yp) {
+        this.xp = xp;
+        this.yp = yp;}
     
     public ECPoint(BigInteger x, BigInteger y) {
         this.x = x;

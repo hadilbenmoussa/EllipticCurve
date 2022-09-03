@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="661.0" maxWidth="949.0" minHeight="400.0" minWidth="600.0" prefHeight="631.0" prefWidth="978.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
+<AnchorPane maxHeight="699.0" maxWidth="949.0" minHeight="400.0" minWidth="600.0" prefHeight="631.0" prefWidth="1111.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
    <children>
-      <AnchorPane layoutY="-28.0" prefHeight="668.0" prefWidth="944.0">
+      <AnchorPane layoutX="3.0" prefHeight="631.0" prefWidth="944.0">
          <children>
-            <LineChart fx:id="lineGraph" layoutX="-8.0" layoutY="30.0" legendVisible="false" prefHeight="638.0" prefWidth="949.0">
+            <LineChart fx:id="lineGraph" layoutX="-10.0" layoutY="40.0" legendVisible="false" prefHeight="531.0" prefWidth="931.0">
               <xAxis>
               	<NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" />
               </xAxis>
@@ -23,21 +23,24 @@
                  <Cursor fx:constant="CROSSHAIR" />
               </cursor>
             </LineChart>
-            <AreaChart fx:id="areaGraph" layoutX="9.0" layoutY="24.0" legendVisible="false" prefHeight="620.0" prefWidth="949.0" translateX="-23.0" visible="false">
-              <xAxis>
-              	<NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis autoRanging="false" lowerBound="-10" side="LEFT" tickUnit="1" upperBound="10" />
-              </yAxis>
-              <cursor>
-                 <Cursor fx:constant="CROSSHAIR" />
-              </cursor>
-            </AreaChart>
-            <Label layoutX="122.0" layoutY="6.0" prefHeight="17.0" prefWidth="109.0" text="Label" textFill="#f5f5f5" />
+            <Label fx:id="cursorCoords" layoutX="122.0" layoutY="6.0" prefHeight="17.0" prefWidth="109.0" text="Label" textFill="#f5f5f5" />
+            <Button fx:id="lineGraphButton" layoutX="36.0" layoutY="654.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="185.0" text="Line Graph" visible="false" />
          </children>
       </AnchorPane>
-      <Button layoutX="194.0" layoutY="618.0" mnemonicParsing="false" onAction="#handleAreaGraphButtonAction" prefHeight="29.0" prefWidth="185.0" text="Area Graph" />
-      <Button fx:id="lineGraphButton" layoutY="618.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="185.0" text="Line Graph" />
+      <Label fx:id="Rval" prefHeight="31.0" prefWidth="172.0" text="R =" textFill="#f5f4f4" translateX="600.0" translateY="580.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="Qval" layoutX="-9.0" prefHeight="31.0" prefWidth="172.0" text="Q =" textFill="WHITE" translateX="350.0" translateY="580.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="Pval" prefHeight="31.0" prefWidth="179.0" text="P =" textFill="#fffbfb" translateX="90.0" translateY="580.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

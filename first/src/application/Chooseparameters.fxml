@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="752.0" styleClass="VBox" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseparametersController">
+   <children>
+      <Label layoutX="14.0" layoutY="70.0" prefHeight="26.0" prefWidth="206.0" text="Choose standard curve :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="finish" layoutX="478.0" layoutY="474.0" mnemonicParsing="false" onAction="#finishbutton" prefHeight="46.0" prefWidth="96.0" text="Finish" textFill="WHITE" />
+      <Label layoutX="22.0" layoutY="144.0" prefHeight="21.0" prefWidth="134.0" text="Curve Attributes" textFill="#fffbfb">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancel" layoutX="592.0" layoutY="474.0" mnemonicParsing="false" onAction="#cancelbutton" prefHeight="46.0" prefWidth="105.0" text="Cancel" />
+      <Label layoutX="45.0" layoutY="170.0" text="p = " textFill="WHITE" translateY="70.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="aval" layoutX="87.0" layoutY="108.0" prefHeight="25.0" prefWidth="439.0" translateY="70.0" />
+      <Label layoutX="45.0" layoutY="138.0" text="b =" textFill="WHITE" translateY="70.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="generatorx" layoutX="72.0" layoutY="255.0" prefHeight="25.0" prefWidth="450.0" translateY="80.0" />
+      <TextField fx:id="modval" layoutX="87.0" layoutY="170.0" prefHeight="25.0" prefWidth="439.0" translateY="70.0" />
+      <Label layoutX="45.0" layoutY="107.0" text="a = " textFill="WHITE" translateY="70.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="bval" layoutX="87.0" layoutY="138.0" prefHeight="25.0" prefWidth="439.0" translateY="70.0" />
+      <Label layoutX="24.0" layoutY="255.0" prefHeight="26.0" prefWidth="52.0" text="Gx  = " textFill="WHITE" translateY="80.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="curvechoicebox" layoutX="17.0" layoutY="96.0" prefHeight="25.0" prefWidth="116.0" />
+      <AmbientLight layoutX="552.0" layoutY="131.0" lightOn="true">
+         <color>
+            <Color red="0.5004264116287231" green="0.539814829826355" blue="0.6973684430122375" />
+         </color>
+      </AmbientLight>
+      <Line endX="298.0" endY="-1.0" layoutX="234.0" layoutY="155.0" startX="-100.0" stroke="WHITE" />
+      <Line endX="409.0" layoutX="123.0" layoutY="285.0" startX="-105.79290771484375" startY="-0.292877197265625" stroke="WHITE" />
+      <Line endX="-77.5" endY="108.0" layoutX="610.0" layoutY="177.0" startX="-77.5" startY="-22.5" stroke="WHITE" />
+      <Line endX="2.5" endY="105.0" layoutX="14.0" layoutY="179.0" startX="2.4999847412109375" startY="-15.0" stroke="WHITE" />
+      <Line endX="399.0" layoutX="133.0" layoutY="325.0" startX="-18.0" stroke="WHITE" />
+      <Line endX="358.0" endY="0.5" layoutX="174.0" layoutY="414.0" startX="-158.0" startY="0.5" stroke="WHITE" />
+      <Line endX="-100.0" endY="-44.0" layoutX="633.0" layoutY="370.0" startX="-100.5" startY="44.0" stroke="#fffefe" />
+      <Line endX="-100.5" endY="97.0" layoutX="117.0" layoutY="317.0" startX="-100.5" startY="9.0" stroke="WHITE" />
+      <Label layoutX="24.0" layoutY="312.0" prefHeight="26.0" prefWidth="96.0" text="Generator" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="warning" layoutX="36.0" layoutY="100.0" prefHeight="17.0" prefWidth="450.0" text="p must be a prime number !!!!" textFill="#95dbee" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="generatory" layoutX="71.0" layoutY="380.0" prefHeight="25.0" prefWidth="450.0" />
+      <Label layoutX="24.0" layoutY="380.0" prefHeight="26.0" prefWidth="52.0" text="Gy  = " textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

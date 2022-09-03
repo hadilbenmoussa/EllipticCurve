@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="1038.0" styleClass="VBox" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sharedkeyController">
+   <children>
+      <BorderPane fx:id="borderpane" prefHeight="574.0" prefWidth="1038.0">
+         <center>
+            <Pane prefHeight="576.0" prefWidth="1038.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="191.0" fitWidth="198.0" layoutX="769.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/boy.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="176.0" fitWidth="200.0" layoutX="39.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/girl%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#fc6969" layoutX="190.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For the curve " wrappingWidth="135.13671875">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="next3" layoutX="931.0" layoutY="512.0" mnemonicParsing="false" onAction="#nextbutton" text="Next" />
+                  <Text fill="#fc6969" layoutX="217.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's create the shared keys :  Alice's shared key will be the multiplication of her secret key by the basepoint of the Elliptic curve chosen  P = a*G same for Bob his shared key will be Q =b*G" wrappingWidth="515.13671875">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="aliceshared" layoutX="28.0" layoutY="448.0" prefHeight="25.0" prefWidth="372.0" />
+                  <Button fx:id="calculatealice" layoutX="28.0" layoutY="474.0" mnemonicParsing="false" onAction="#alicesharedkey" prefHeight="38.0" prefWidth="90.0" style="-fx-font-size: 15;" text="Calculate" />
+                  <Button fx:id="calculatebob" layoutX="643.0" layoutY="474.0" mnemonicParsing="false" onAction="#bobsharedkey" prefHeight="38.0" prefWidth="90.0" style="-fx-font-size: 15;" text="Calculate" />
+                  <Text fx:id="curvestring" fill="#fc6969" layoutX="325.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="299.13671875">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="bobshared" layoutX="643.0" layoutY="448.0" prefHeight="25.0" prefWidth="373.0" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

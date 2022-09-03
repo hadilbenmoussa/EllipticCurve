@@ -1,6 +1,8 @@
 package application;
 
 import java.net.URL;
+import java.text.DecimalFormat;
+
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -14,19 +16,17 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.chart.AreaChart;
+
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Line;
 
 public class GraphViewController implements Initializable{
 	@FXML
-	private LineChart<Double, Double> lineGraph;
-	@FXML
-	private AreaChart<Double, Double> areaGraph;
+	public LineChart<Double, Double> lineGraph;
+
 	@FXML
 	private Button lineGraphButton;
 
@@ -34,13 +34,22 @@ public class GraphViewController implements Initializable{
 	private Button areaGraphButton;
 	
    @FXML
-	private Label cursorCoords;
+	public Label cursorCoords;
+   private static DecimalFormat df =new DecimalFormat("#.##");
    
-   
-	private MyGraph mathsGraph;
-	private MyGraph areaMathsGraph;
+	public MyGraph mathsGraph;
+
 	public Integer a;
 	public Integer b;
+	public Integer k;
+    public boolean op=true/*true sig l'operation add est selectionné*/;
+    public double Rx,Ry;
+@FXML 
+public Label Rval;
+@FXML 
+public Label Qval;
+@FXML 
+public Label Pval;
 
 
 
@@ -48,41 +57,32 @@ public class GraphViewController implements Initializable{
 public void initialize(final URL url, final ResourceBundle rb) {
 	    
 	mathsGraph = new MyGraph(lineGraph, 10);
-	areaMathsGraph = new MyGraph(areaGraph, 10);
+    lineGraph.setVisible(true);
+	
+	
 		
 	}
 
-
-
-public void set_a(Integer aval) {
-	this.a=aval;
+public void set_op(boolean op) {
+	this.op=op;
+}
+public void set_k(Integer k) {
+	this.k=k;
 };
-public void set_b(Integer bval) {
-	this.a=bval;
+
+public void set_a(Integer a) {
+	this.a=a;
 };
-@FXML
-private void handleLineGraphButtonAction(final ActionEvent event) {
-	lineGraph.setVisible(true);
-	areaGraph.setVisible(false);
-	plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b));
-	plotLine(x -> -(Math.sqrt(Math.pow(x, 3)+a*Math.pow(x, 2)+b)));
-	}
-private void plotLine(Function<Double, Double> function) {
-	if (lineGraph.isVisible()) {
+public void set_b(Integer b) {
+	this.b=b;
+};
+
+public void plotLine(Function<Double, Double> function) {
+	
 			mathsGraph.plotLine(function);
 			cursorCoords = createCursorGraphCoordsMonitorLabel(lineGraph);}
-   else {areaMathsGraph.plotLine(function);
-		}
-	}
-@FXML
-private void handleAreaGraphButtonAction( ActionEvent event) {
-	areaGraph.setVisible(true);
-	lineGraph.setVisible(false);
-	plotLine(x ->Math.sqrt(Math.pow(x, 3)+Math.pow(x, 2)+15));
-	plotLine(x -> -(Math.sqrt(Math.pow(x,3)+Math.pow(x,2)+15)));}
 	
-
-private Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> lineChart){
+public Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> lineChart){
 	final Axis<Double> xAxis = lineChart.getXAxis();
 	final Axis<Double> yAxis = lineChart.getYAxis();
     final Label cursorCoords = new Label();
@@ -91,26 +91,6 @@ private Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> line
 	      if (n != chartBackground && n != xAxis && n != yAxis) {
 	    	  }};
 	    
-	chartBackground.setOnMouseEntered(new EventHandler<MouseEvent>() {
-	      @Override public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(true);
-	      }
-	    });
-	   
-
-    chartBackground.setOnMouseMoved(new EventHandler<MouseEvent>() {
-	      @Override public void handle(MouseEvent mouseEvent) {
-	    	    cursorCoords.setText(
-	            String.format(
-	            "(%.2f, %.2f)",
-	            xAxis.getValueForDisplay(mouseEvent.getX()),
-	            yAxis.getValueForDisplay(mouseEvent.getY())
-	          ));
-	 
-	      } }
-	    );
-	  
-	  
 	chartBackground.addEventFilter(MouseEvent.MOUSE_CLICKED,new EventHandler<MouseEvent>(){
 	    Double Px,Qx,Py,Qy;
 	 	Button cleaning = new Button();
@@ -121,7 +101,7 @@ private Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> line
 	   public void handle(MouseEvent event) {
 	        pointspq.add(xAxis.getValueForDisplay(event.getX()));
             pointspq.add(yAxis.getValueForDisplay(event.getY()));
-	        if(pointspq.size() ==4) {
+	        if((op==true) &&(pointspq.size() ==4)) {
 	        	event.consume();
 	            Px=pointspq.get(0);
 	            Py=pointspq.get(1);
@@ -135,79 +115,74 @@ private Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> line
         		System.out.println(Qx);
         	    System.out.println("qy=");
                 System.out.println(Qy);
-                third_intersection(Px,Py,Qx,Qy,1,15);
+                Qval.setVisible(true);
+                Pval.setText("P = ("+df.format(Px)+" ,"+df.format(Py)+")");
+                Qval.setText("Q = ("+df.format(Qx)+" ,"+df.format(Qy)+")");
                 mathsGraph.plotL(Px,Py,Qx,Qy);
-           }}});
-	  
-	    
-     chartBackground.setOnMouseExited(new EventHandler<MouseEvent>() {
-	      @Override
-	      public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(false);
-	      }});
-
-	    xAxis.setOnMouseEntered(new EventHandler<MouseEvent>() {
-	      @Override public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(true);
-	      }
-	    });
-
-	    xAxis.setOnMouseMoved(new EventHandler<MouseEvent>() {
-	      @Override 
-	      public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setText(
-	          String.format(
-	            "x = %.2f",
-	            xAxis.getValueForDisplay(mouseEvent.getX())
-	          ));
-	      }
-	    });
-
-	    xAxis.setOnMouseExited(new EventHandler<MouseEvent>() {
-	      @Override 
-	      public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(false);
-	      }
-	    });
-
-	    yAxis.setOnMouseEntered(new EventHandler<MouseEvent>() {
-	      @Override public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(true);
-	      }
-	    });
-
-	    yAxis.setOnMouseMoved(new EventHandler<MouseEvent>() {
-	      @Override public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setText(
-	          String.format(
-	            "y = %.2f",
-	            yAxis.getValueForDisplay(mouseEvent.getY())
-	          )
-	        );
-	      }
-	    });
-
-	    yAxis.setOnMouseExited(new EventHandler<MouseEvent>() {
-	      @Override
-	      public void handle(MouseEvent mouseEvent) {
-	        cursorCoords.setVisible(false);
-	      }
-	    });
-	    return cursorCoords; };
-    
-
-private void third_intersection(double Px, double Py, double Qx, double Qy, double a, double b) {
+                ECPoint R=third_intersection(new ECPoint(Px,Py),new ECPoint(Qx,Qy),a,b);
+                Rval.setText("R = ("+df.format(Rx)+" ,"+df.format(Ry)+")");
+                mathsGraph.plotProjection(R.xp,R.yp);
+                pointspq.clear();
+                }
+	        
+                else if ((op==false)&&(pointspq.size()==2)) {
+            	event.consume();
+            	Qval.setVisible(false);
+	            Px=pointspq.get(0);
+	            Py=pointspq.get(1);
+	            pointspq.clear();
+	            System.out.println("px=");
+	            System.out.println(Px);
+	            System.out.println("py=");
+	            System.out.println(Py);
+	            Pval.setText("P = ("+df.format(Px)+" ,"+df.format(Py)+")");
+	            mathsGraph.plottangent(a,b,Px,Py);
+	            ECPoint R1=intersctiondoubling(new ECPoint(Px,Py),a,b);
+	            mathsGraph.plotProjection(R1.xp,R1.yp);
+	            ECPoint R=doubleandadd(new ECPoint(Px,Py),k,a,b);
+                Rval.setText("R = ("+df.format(R.xp)+" ,"+df.format(R.yp)+")");
+	            
+	            pointspq.clear();
+            }
+           }});
 	 
-    double beta =  3*Px*Px*Qx + 2*Px*a - Py*Py - 2*Py*Qy + Qx*a + 3*b;;
-	double gamma = 3*Px*Qx*Qx + 2*Qx*a - Qy*Qy - 2*Py*Qy + Px*a + 3*b; ;
-    double denominator = gamma - beta; 
-    double Rx = (gamma*Px - beta*Qx)/denominator;
-    double Ry = (gamma*Py - beta*Qy)/denominator; 
+	return cursorCoords; 
+	};
+
+private ECPoint third_intersection(ECPoint P, ECPoint Q ,Integer a, Integer b) {
+	 
+    double beta = (Q.yp-P.yp)/(Q.xp-P.xp) ;
+
+    Rx = beta*beta-P.xp-Q.xp;
+    Ry = beta*(P.xp-Rx)-P.yp;
+	System.out.println("Rx=");
+    System.out.println(Rx);
+	System.out.println("Ry= ");
+	System.out.print(Ry);
+	return new ECPoint(Rx,Ry);
+	}
+;
+private ECPoint intersctiondoubling(ECPoint P,Integer a, Integer b) {
+	 
+    double beta =  (3*P.xp*P.xp+a)/(2*P.yp);
+	Rx = beta*beta-P.xp-P.xp;
+    Ry = beta*(P.xp-Rx)-P.yp; 
 	System.out.println("Rx=");
     System.out.println(Rx);
 	System.out.println("Ry= ");
 	System.out.print( Ry);
-	mathsGraph.plotProjection(Rx,Ry);}
-}
+	return new ECPoint(Rx,Ry);
+	}
+
+private ECPoint doubleandadd(ECPoint P,int k,Integer a,Integer b)
+{   if(k==1) {return P;}
+   else if((k%2)==1) {
+	   return third_intersection(P,doubleandadd(P,k-1,a,b),a,b);
+   }
+   else {
+	
+	return intersctiondoubling(doubleandadd(P,k/2,a,b),a,b);}
+	 }
+	}
+
 	    
-	  
