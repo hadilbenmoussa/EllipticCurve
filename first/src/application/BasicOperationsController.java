@@ -13,7 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -76,7 +76,7 @@ public class BasicOperationsController implements Initializable {
    public int k=0;
   
 public javafx.scene.control.Button plot;
-   private Parent root;
+  
    private Pane view;
    public  EccoverfinitefieldController controller= new EccoverfinitefieldController();
 public GraphViewController controllerg=new GraphViewController();
@@ -86,7 +86,7 @@ public GraphViewController controllerg=new GraphViewController();
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		
-		
+		small.fire();
 		
 	}
 	
@@ -293,18 +293,19 @@ public GraphViewController controllerg=new GraphViewController();
     	 controller.generatorq.setDisable(true);
     	 controller.randomq.setDisable(true);
     	 SpinnerValueFactory<Integer> valueFactory = 
- 				new SpinnerValueFactory.IntegerSpinnerValueFactory(-10, 10);
+ 				new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 20);
  		
- 		valueFactory.setValue(0);
+ 		valueFactory.setValue(1);
  		k2spinner.setValueFactory(valueFactory);
  		
  		k2spinner.setEditable(true);
  		k2spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
  	    System.out.println("New value: "+newValue);
  	    ECPoint M=new ECPoint(controller.P.x,controller.P.y);
+ 	    
  	    ECPoint M2=controller.curves.get((controller.i).intValue()).multiply(M,newValue);
  		controller.changelabel(M2.x,controller.Rx);
- 		controller.changelabel(M2.x,controller.Ry);
+ 		controller.changelabel(M2.y,controller.Ry);
  		
 
  		

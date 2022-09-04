@@ -82,8 +82,15 @@ public class SecretkeyController implements Initializable{
     Stage stage= new Stage();
     stage.initModality(Modality.WINDOW_MODAL);
     stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+	 root.setStyle("-fx-padding: 10;" 
+             + "-fx-border-style: solid outside;" 
+             + "-fx-border-width: 2;" 
+             + "-fx-border-insets: 5;" 
+             + "-fx-border-radius: 5;" 
+             + "-fx-border-color: white;"); 
     stage.setScene(new Scene(root));
     stage.initStyle(StageStyle.UNDECORATED);
+    stage.setResizable(false);
     stage.show();
 		if ((enteralice >1) && (enterbob >1)) {
 			next2.setVisible(false);
@@ -96,8 +103,15 @@ public class SecretkeyController implements Initializable{
 	FXMLLoader loader = new FXMLLoader(getClass().getResource("bobkey.fxml"));
 	Parent root = loader.load();
     Stage stage= new Stage();
+	 root.setStyle("-fx-padding: 10;" 
+             + "-fx-border-style: solid outside;" 
+             + "-fx-border-width: 2;" 
+             + "-fx-border-insets: 5;" 
+             + "-fx-border-radius: 5;" 
+             + "-fx-border-color: white;"); 
     stage.initModality(Modality.WINDOW_MODAL);
     stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+    stage.initStyle(StageStyle.UNDECORATED);
     stage.setScene(new Scene(root));
     stage.show();
     if ((enteralice >=1) && (enterbob >=1)) {

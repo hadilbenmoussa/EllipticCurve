@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="722.0" prefWidth="1350" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BasicOperationsController">
+<AnchorPane prefHeight="688.0" prefWidth="1350" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BasicOperationsController">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="764.0" prefWidth="1350.0" style="-fx-background-color: #2F3249;">
+      <BorderPane fx:id="mainPane" prefHeight="688.0" prefWidth="1350.0" style="-fx-background-color: #2F3249;">
          <right>
             <VBox prefHeight="688.0" prefWidth="435.0" styleClass="VBox" stylesheets="@../application/application.css" translateX="7.6" BorderPane.alignment="CENTER">
                <children>
@@ -50,12 +50,12 @@
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="small" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="130.0" text="Small" textFill="WHITE" toggleGroup="$curvesize" translateX="220.0" translateY="-18.0">
+                  <RadioButton fx:id="small" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="130.0" text="Small" textFill="WHITE" toggleGroup="$curvesize" translateX="250.0" translateY="-18.0">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <TextField fx:id="aval" prefHeight="25.0" prefWidth="175.0" translateX="-80.0" translateY="25.0" visible="false">
+                  <TextField fx:id="aval" prefHeight="25.0" prefWidth="175.0" translateX="-80.0" translateY="-10.0" visible="false">
                      <VBox.margin>
                         <Insets left="180.0" right="200.0" />
                      </VBox.margin>

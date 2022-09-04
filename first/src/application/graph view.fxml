@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="699.0" maxWidth="949.0" minHeight="400.0" minWidth="600.0" prefHeight="631.0" prefWidth="1111.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
+<AnchorPane maxHeight="688.0" maxWidth="949.0" minHeight="400.0" minWidth="600.0" prefHeight="688.0" prefWidth="935.0" styleClass="root" stylesheets="@css.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GraphViewController">
    <children>
-      <AnchorPane layoutX="3.0" prefHeight="631.0" prefWidth="944.0">
+      <AnchorPane layoutX="3.0" prefHeight="688.0" prefWidth="935.0">
          <children>
             <LineChart fx:id="lineGraph" layoutX="-10.0" layoutY="40.0" legendVisible="false" prefHeight="531.0" prefWidth="931.0">
               <xAxis>
@@ -23,7 +23,7 @@
                  <Cursor fx:constant="CROSSHAIR" />
               </cursor>
             </LineChart>
-            <Label fx:id="cursorCoords" layoutX="122.0" layoutY="6.0" prefHeight="17.0" prefWidth="109.0" text="Label" textFill="#f5f5f5" />
+            <Label fx:id="cursorCoords" layoutX="122.0" layoutY="6.0" prefHeight="17.0" prefWidth="109.0" textFill="#f5f5f5" />
             <Button fx:id="lineGraphButton" layoutX="36.0" layoutY="654.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="185.0" text="Line Graph" visible="false" />
          </children>
       </AnchorPane>

@@ -14,8 +14,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/application/menu.fxml"));
-	        primaryStage.setResizable(true);
-			Scene scene = new Scene(root,600,600);
+		
+			primaryStage.setResizable(true);
+			Scene scene = new Scene(root,1355,682);
 		    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 		    primaryStage.show();

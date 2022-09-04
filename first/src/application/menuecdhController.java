@@ -27,6 +27,7 @@ public class menuecdhController {
 	    Stage stage= new Stage();
 	    stage.setScene(new Scene(root));
 	    stage.initModality(Modality.WINDOW_MODAL);
+	    stage.setResizable(false);
         stage.initOwner(((Node) event.getSource()).getScene().getWindow());
 	    stage.show();
 			;

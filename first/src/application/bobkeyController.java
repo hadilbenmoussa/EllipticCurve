@@ -64,8 +64,8 @@ public class bobkeyController implements Initializable{
 	    	   view = loader.load();
 	         
 	          controllerb = loader.getController(); 
-	          controllerb.sb=Long.parseLong(secretb.getText());
-		      	System.out.println(controllerb.sb);
+	          ECDHController.sb=Long.parseLong(secretb.getText());
+		      	System.out.println(ECDHController.sb);
 
 	          }
 		

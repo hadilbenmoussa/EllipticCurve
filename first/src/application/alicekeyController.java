@@ -63,7 +63,7 @@ public class alicekeyController implements Initializable{
 	    	  throw new java.io.FileNotFoundException("Fxml file cannot be found");}
 	    	  FXMLLoader loader=new FXMLLoader(fileurl);
 	    	   view = loader.load();
-	         
+	          
 	          controller = loader.getController(); 
 	          ECDHController.sa=Long.parseLong(secreta.getText());
 		      	System.out.println(ECDHController.sa);

@@ -1,7 +1,7 @@
 package application;
 
 import java.io.IOException;
-import java.math.BigInteger;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 
 public class sharedkeyController implements Initializable{
@@ -32,7 +33,8 @@ public class sharedkeyController implements Initializable{
 	@FXML 
     TextField bobshared;
 	
-
+	@FXML 
+    Text curvestring;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -51,7 +53,9 @@ public class sharedkeyController implements Initializable{
 	    	   
 	    	   System.out.print(ECDHController.index );
 	    	   
+	    	   
 	         EllipticCurve e=ECDHController.curves.get(ECDHController.index);
+	         curvestring.setText("y^2 mod "+e.getP()+"= x^3 + "+e.getA()+"x^2 + " +e.getB()+" mod "+e.getP());
 	         ECPoint key= new ECPoint();
 	         key=e.multiply(e.getBasePoint(), ECDHController.sa);
 	         

@@ -50,7 +50,7 @@ BorderPane borderpane;
          
          System.out.print(s.toString(16));
          skey.setText(s.toString(16));
-         textdes.setText("        CONGRATULATIONS !!!  you helped Alice and Bob establishing their Secret Key  ");
+         textdes.setText("        CONGRATULATIONS !!!  you helped Alice and Bob establishing their Session Key  ");
           
  		 
 	
