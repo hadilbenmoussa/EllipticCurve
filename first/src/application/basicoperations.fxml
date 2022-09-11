@@ -15,13 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="688.0" prefWidth="1350" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BasicOperationsController">
+<AnchorPane prefHeight="670.0" prefWidth="1350" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BasicOperationsController">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="688.0" prefWidth="1350.0" style="-fx-background-color: #2F3249;">
+      <BorderPane fx:id="mainPane" prefHeight="670.0" prefWidth="1350.0" style="-fx-background-color: #2F3249;">
          <right>
-            <VBox prefHeight="688.0" prefWidth="435.0" styleClass="VBox" stylesheets="@../application/application.css" translateX="7.6" BorderPane.alignment="CENTER">
+            <VBox prefHeight="670.0" prefWidth="435.0" styleClass="VBox" stylesheets="@../application/application.css" translateX="7.6" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="39.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" translateX="30.0" translateY="27.0">
+                  <ImageView fitHeight="39.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" translateX="35.0" translateY="20.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -37,12 +37,12 @@
                         <Insets left="60.0" />
                      </VBox.margin>
                   </Label>
-                  <Label layoutX="70.0" layoutY="36.0" prefHeight="99.0" prefWidth="429.0" text="Curve Size" textFill="WHITE" translateX="10.0" translateY="10.0">
+                  <Label layoutX="70.0" layoutY="36.0" prefHeight="99.0" prefWidth="429.0" text="Curve Size" textFill="WHITE" translateX="10.0" translateY="-15.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="large" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="119.0" text="LARGE" textFill="WHITE" translateX="20.0" translateY="15.0">
+                  <RadioButton fx:id="large" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="119.0" text="LARGE" textFill="WHITE" translateX="40.0" translateY="-20.0">
                      <toggleGroup>
                         <ToggleGroup fx:id="curvesize" />
                      </toggleGroup>
@@ -50,12 +50,12 @@
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="small" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="130.0" text="Small" textFill="WHITE" toggleGroup="$curvesize" translateX="250.0" translateY="-18.0">
+                  <RadioButton fx:id="small" mnemonicParsing="false" onAction="#submitCurvesize" prefHeight="25.0" prefWidth="130.0" text="Small" textFill="WHITE" toggleGroup="$curvesize" translateX="290.0" translateY="-50.0">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <TextField fx:id="aval" prefHeight="25.0" prefWidth="175.0" translateX="-80.0" translateY="-10.0" visible="false">
+                  <TextField fx:id="aval" prefHeight="25.0" prefWidth="175.0" translateX="-80.0" translateY="-20.0">
                      <VBox.margin>
                         <Insets left="180.0" right="200.0" />
                      </VBox.margin>
@@ -68,7 +68,7 @@
                   <ChoiceBox fx:id="choicebox" prefHeight="26.0" prefWidth="312.0" style="-fx-background-color: white;" translateX="30.0" translateY="100.0" visible="false" />
                   <VBox prefHeight="71.0" prefWidth="361.0" visible="false">
                      <children>
-                        <Label fx:id="curvattlabel" layoutX="20.0" layoutY="10.0" prefHeight="0.0" prefWidth="361.0" text="Curve Attributes" textFill="WHITE" translateX="10.0" translateY="-60.0">
+                        <Label fx:id="curvattlabel" layoutX="20.0" layoutY="10.0" prefHeight="0.0" prefWidth="361.0" text="Curve Attributes" textFill="WHITE" translateX="10.0" translateY="-130.0">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -76,7 +76,7 @@
                       
                      </children>
                   </VBox>
-                  <Label fx:id="chooseplabel" prefHeight="27.0" prefWidth="417.0" text="Choose P with your mouse and Choose Operation " textFill="WHITE" textOverrun="CLIP" translateY="30.0" visible="false">
+                  <Label fx:id="chooseplabel" prefHeight="27.0" prefWidth="417.0" text="Choose P with your mouse and Choose Operation " textFill="WHITE" textOverrun="CLIP" translateY="10.0">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -84,7 +84,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="addition" mnemonicParsing="false" onAction="#handleoperation2" prefHeight="25.0" prefWidth="206.0" selected="false" text="Choose Q with mouse" textFill="WHITE" translateX="30.0" translateY="30.0" visible="false">
+                  <RadioButton fx:id="addition" mnemonicParsing="false" onAction="#handleoperation2" prefHeight="25.0" prefWidth="206.0" selected="false" text="Choose Q with mouse" textFill="WHITE" translateX="30.0" translateY="70.0">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -92,8 +92,8 @@
                         <ToggleGroup fx:id="operation" />
                      </toggleGroup>
                   </RadioButton>
-                  <Label fx:id="infotext" prefHeight="17.0" prefWidth="356.0" text="the graph show the visuaisation of P+P=2*P" textFill="#a17777" translateX="30.0" translateY="120.0" visible="false" />
-                  <TextField fx:id="kval" translateX="50.0" translateY="60.0" visible="false">
+                  <Label fx:id="infotext" prefHeight="17.0" prefWidth="356.0" text="the graph show the visuaisation of P+P=2*P" textFill="#a17777" translateX="60.0" translateY="145.0" />
+                  <TextField fx:id="kval" translateX="50.0" translateY="90.0">
                      <VBox.margin>
                         <Insets left="220.0" right="150.0" />
                      </VBox.margin>
@@ -106,46 +106,51 @@
                         <ToggleGroup fx:id="operationmod" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="MultiplyPk" layoutX="10.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleoperation" text="Multiply P by k" textFill="WHITE" toggleGroup="$operationmod" translateX="60.0" translateY="70.0" visible="false">
+                  <RadioButton fx:id="MultiplyPk" layoutX="10.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleoperation" text="Multiply P by k" textFill="WHITE" toggleGroup="$operationmod" translateX="60.0" translateY="66.0" visible="false">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="multiplication" layoutX="10.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleoperation2" prefHeight="25.0" prefWidth="223.0" text="Choose  Q as k*P With k =" textFill="WHITE" toggleGroup="$operation" translateX="30.0" translateY="-20.0" visible="false">
+                  <RadioButton fx:id="multiplication" layoutX="10.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleoperation2" prefHeight="25.0" prefWidth="223.0" text="Choose  Q as k*P With k =" textFill="WHITE" toggleGroup="$operation" translateX="30.0" translateY="10.0">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </RadioButton>
-                  <Label fx:id="alabel" text="a =" textFill="WHITE" translateX="40.0" translateY="-290.0" visible="false">
+                  <Label fx:id="alabel" text="a =" textFill="WHITE" translateX="50.0" translateY="-310.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="blabel" text="b =" textFill="WHITE" translateX="40.0" translateY="-268.0" visible="false">
+                  <Label fx:id="blabel" text="b =" textFill="WHITE" translateX="250.0" translateY="-338.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Spinner fx:id="k2spinner" prefHeight="23.0" prefWidth="96.0" translateX="250.0" translateY="-62.0" visible="false" />
-                  <Button fx:id="submit" mnemonicParsing="false" onAction="#Buttonsubmit" text="Submit" translateX="150.0" translateY="-60.0" visible="false" />
-                  <Button fx:id="clearhistory" layoutX="20.0" layoutY="501.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="325.0" stylesheets="@../application/application.css" text="Clear History" textFill="WHITE" translateX="40.0" translateY="-20.0" underline="true" visible="false">
+                  <Spinner fx:id="k2spinner" prefHeight="23.0" prefWidth="96.0" translateX="250.0" translateY="-45.0" visible="false" />
+                  <Button fx:id="submit" mnemonicParsing="false" onAction="#Buttonsubmit" text="Visualize" translateX="150.0" translateY="-20.0" />
+                  <Label fx:id="warning" prefHeight="20.0" prefWidth="388.0" text="a and b must satisfy 4a^3+b^2&lt;&gt;0 for a secure curve !" textAlignment="CENTER" textFill="#ee6f4cc2" translateY="-380.0">
                      <font>
-                        <Font size="10.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="history" mnemonicParsing="false" prefHeight="46.0" prefWidth="326.0" stylesheets="@../application/application.css" text="View calculation History " textFill="WHITE" translateX="30.0" translateY="-20.0" underline="true" visible="false">
                      <VBox.margin>
-                        <Insets left="10.0" />
+                        <Insets />
                      </VBox.margin>
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <TextField fx:id="bval" layoutX="10.0" layoutY="216.0" translateX="-100.0" translateY="-460.0" visible="false">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></Label>
+                  <TextField fx:id="bval" layoutX="10.0" layoutY="216.0" translateX="100.0" translateY="-455.0">
                      <VBox.margin>
                         <Insets left="200.0" right="180.0" />
                      </VBox.margin>
                   </TextField>
+                  <Label fx:id="curve" prefHeight="17.0" prefWidth="421.0" textFill="#fffdfd" translateY="-40.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
                </children>
                <BorderPane.margin>
                   <Insets />

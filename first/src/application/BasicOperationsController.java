@@ -57,7 +57,11 @@ public class BasicOperationsController implements Initializable {
     private Label chooseplabel;
  
     @FXML 
+    private Label warning;
+    @FXML 
     private Label infotext;
+    @FXML 
+    private Label curve;
    
    @FXML 
    private Label curvattlabel;
@@ -107,8 +111,10 @@ public GraphViewController controllerg=new GraphViewController();
     		alabel.setVisible(true);
     		blabel.setVisible(true);
     		chooseplabel.setVisible(true);
+    		warning.setVisible(true);
     		
     		kval.setVisible(true);
+    		kval.setText("1");
     		bval.setVisible(true);
     		infotext.setVisible(true);
     		submit.setVisible(true);
@@ -118,6 +124,7 @@ public GraphViewController controllerg=new GraphViewController();
     		MultiplyPk.setVisible(false);
     		standardlabel.setVisible(false);
     		choicebox.setVisible(false);
+                
     		}
     		
     		
@@ -202,7 +209,7 @@ public GraphViewController controllerg=new GraphViewController();
            case 15:
 	 
 	           filllabels(EllipticCurve.secp224k1,controller);
-	           break ;
+	           break ; 
           case 16:
 	
 	           filllabels(EllipticCurve.secp224r1,controller);
@@ -227,10 +234,10 @@ public GraphViewController controllerg=new GraphViewController();
     	{
     	System.out.println("No Page"+"Please check fxml loader");
     	}
-    mainPane.setCenter(view);
+   mainPane.setCenter(view);
  
-    curvattlabel.setVisible(false);
-	multiplication.setVisible(false);
+   curvattlabel.setVisible(false);
+   multiplication.setVisible(false);
     		
    k2spinner.setVisible(true);
    addPQ.setVisible(true);
@@ -246,11 +253,12 @@ public GraphViewController controllerg=new GraphViewController();
    
    
    kval.setVisible(false);
-	infotext.setVisible(false);
+   infotext.setVisible(false);
    
    addition.setVisible(false);
-     aval.setVisible(false);
-	bval.setVisible(false);	
+   aval.setVisible(false);
+   bval.setVisible(false);	
+   warning.setVisible(false);
     	
     	};}
     		
@@ -279,7 +287,13 @@ public GraphViewController controllerg=new GraphViewController();
 	 
 	  if (addPQ.isSelected()) {
 		  k2spinner.setDisable(true);
-		
+		  controller.Rx.clear();
+	      controller.Ry.clear();
+	      controller.Qx.setDisable(false);
+	      controller.Qy.setDisable(false);
+	      controller.generatorq.setDisable(false);
+	      controller.randomq.setDisable(false);
+		  
 	  }
      else if (MultiplyPk.isSelected()) {
     	 
@@ -302,7 +316,6 @@ public GraphViewController controllerg=new GraphViewController();
  		k2spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
  	    System.out.println("New value: "+newValue);
  	    ECPoint M=new ECPoint(controller.P.x,controller.P.y);
- 	    
  	    ECPoint M2=controller.curves.get((controller.i).intValue()).multiply(M,newValue);
  		controller.changelabel(M2.x,controller.Rx);
  		controller.changelabel(M2.y,controller.Ry);
@@ -330,13 +343,12 @@ public void Buttonsubmit(final ActionEvent event) {
     		          controllerg = loader.getController();
     		          int a= Integer.parseInt(aval.getText());
     		          int b=Integer.parseInt(bval.getText());
+    		          curve.setText(" Curve : Y^2 = X^3 + " + a+"X^2" + "+ " + b);
     		          controllerg.set_a(a);
     		          controllerg.set_b(b);
     		          controllerg.mathsGraph.plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*x+b));
     		          controllerg.mathsGraph.plotLine(x ->-(Math.sqrt(Math.pow(x, 3)+a*x+b)));
     		          controllerg.cursorCoords = controllerg.createCursorGraphCoordsMonitorLabel(controllerg.lineGraph);
-    		          
-    		      
     		         
     		          if(addition.isSelected()) {controllerg.set_op(true);
     		       

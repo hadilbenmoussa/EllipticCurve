@@ -68,8 +68,19 @@ public class EccoverfinitefieldController implements Initializable{
 		curves.add(EllipticCurve.secp256k1);
 		curves.add(EllipticCurve.secp384r1);
 		curves.add(EllipticCurve.secp521r1);
-		
-			
+		Px.setEditable(false);
+		Py.setEditable(false);
+		Qx.setEditable(false);
+		Qy.setEditable(false);
+		Rx.setEditable(false);
+		Ry.setEditable(false);
+		Gx.setEditable(false);
+		Gy.setEditable(false);
+		val_a.setEditable(false);
+		val_b.setEditable(false);
+		order.setEditable(false);
+		val_mod.setEditable(false);
+	
 	
 	};
 	
@@ -100,75 +111,57 @@ public class EccoverfinitefieldController implements Initializable{
 		
 		    
 		
-	public void handlerandomq(ActionEvent event) {
+   public void handlerandomq(ActionEvent event) {
 
 		ECPoint K=curves.get(i.intValue()).getBasePoint();
 	  	   long r=Math.round(100*Math.random());
 	       Q=curves.get(i.intValue()).multiply(K,r);
 	       Qx.setText((Q.x).toString(16));
 		   Qy.setText((Q.y).toString(16));
-			 fillRQ();
-					 };
-     public void handlegeneratorp(ActionEvent event) {
+			 fillRQ(); };
+					 
+   public void handlegeneratorp(ActionEvent event) {
 		  P=curves.get(i.intValue()).getBasePoint();
 		  Px.setText((P.x).toString(16));
 		  Py.setText((P.y).toString(16));
 				    
 				 };
-	 public void handlegeneratorq(ActionEvent event) {
+   public void handlegeneratorq(ActionEvent event) {
 			
           Q=curves.get(i.intValue()).getBasePoint();
           Qx.setText((Q.x).toString(16));
 	      Qy.setText((Q.y).toString(16));
-	fillRQ();
+	        fillRQ();
 				  };
      
 					  
 
-     public void fillRQ() {
-	 Qx.textProperty().addListener(new ChangeListener<String>() {
+   public void fillRQ() {
+	  Qx.textProperty().addListener(new ChangeListener<String>() {
 		  @Override
-	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
-      Q.x=new BigInteger(newValue,16);
-    
-    
-
-		  }});
-	 Qy.textProperty().addListener(new ChangeListener<String>() {
+	  public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
+         Q.x=new BigInteger(newValue,16); }});
+	  Qy.textProperty().addListener(new ChangeListener<String>() {
 		  @Override
-	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
-     Q.y=new BigInteger(newValue,16);
-   
-   
-		  }});
-	 Px.textProperty().addListener(new ChangeListener<String>() {
+	  public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
+         Q.y=new BigInteger(newValue,16); }});
+	 
+	  Px.textProperty().addListener(new ChangeListener<String>() {
 		  @Override
-	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
-    P.x=new BigInteger(newValue,16);
-  
-  
-		  }});
+	  public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
+         P.x=new BigInteger(newValue,16); }});
 	 Py.textProperty().addListener(new ChangeListener<String>() {
 		  @Override
-	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
-
-			  P.y=new BigInteger(newValue,16);
-  
-  
-		  }});
-	
-	 ECPoint R= curves.get((i).intValue()).add(P, Q); 
-	    changelabel(R.x,Rx);
-	    changelabel(R.y,Ry);
+	  public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {   
+         P.y=new BigInteger(newValue,16);}});
+	     ECPoint R= curves.get((i).intValue()).add(P, Q); 
+	     changelabel(R.x,Rx);
+	     changelabel(R.y,Ry);
 
 	 }
      
 		
 	
-     public void get_curve() {
-    	
-      System.out.print(i);
-      
-  }
+   
   
 }

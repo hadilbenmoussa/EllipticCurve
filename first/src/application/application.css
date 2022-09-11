@@ -33,18 +33,18 @@
 }
 .texty{
 	 -fx-font-family:courier_new;   
-      -fx-text-fill:White;  
+      -fx-text-fill:#C3B8D7;  
       -fx-font-size:22;  
 }
 .texty:hover{
-	   -fx-text-fill:#56E6DA;  
+	   -fx-text-fill:#9A448D;  
       -fx-font-size:24;  
 	
 	
 }
 
 .texty:pressed{
-	   -fx-text-fill:#56E6DA;  
+	   -fx-text-fill:#9A448D;  
       -fx-font-size:24;  
 	
 	

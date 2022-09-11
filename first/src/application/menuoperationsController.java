@@ -19,11 +19,11 @@ import javafx.stage.Stage;
 
 public class menuoperationsController implements Initializable{
 	@FXML
-	private Hyperlink hyp01,hyp02;
+	private Hyperlink hyp01;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		assert hyp01 != null : "fx:id=\"hyp01\" was not injected: check your FXML file 'Hyperlink.fxml'.";
-		assert hyp02 != null : "fx:id=\"hyp01\" was not injected: check your FXML file 'Hyperlink.fxml'.";
+		
 	}
 	@FXML
 	void hyp01OnAction(ActionEvent event) throws IOException {	
@@ -36,17 +36,7 @@ public class menuoperationsController implements Initializable{
     stage.show();
 		;
 	}
-	@FXML
-	void hyp02OnAction(ActionEvent event) throws IOException {	
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("basicoperations.fxml"));
-	Parent root = loader.load();
-    Stage stage= new Stage();
-    stage.initModality(Modality.WINDOW_MODAL);
-    stage.initOwner(((Node) event.getSource()).getScene().getWindow());
-    stage.setScene(new Scene(root));
-    stage.show();
-		;
-	}
+	
 	@FXML
 private void sendtobasicoperations(ActionEvent event) throws IOException{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("basicoperations.fxml"));

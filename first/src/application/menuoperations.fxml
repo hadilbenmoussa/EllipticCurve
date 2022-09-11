@@ -8,22 +8,12 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1250.0" prefWidth="1607.0" styleClass="VBox" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuoperationsController">
    <children>
-      <ImageView fitHeight="55.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" translateX="245.0" translateY="290.0">
+      <ImageView fitHeight="55.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" translateX="410.0" translateY="290.0">
          <image>
             <Image url="@../../../../../Downloads/icons8-add-file-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="55.0" pickOnBounds="true" preserveRatio="true" translateX="485.0" translateY="290.0">
-         <image>
-            <Image url="@../../../../../Downloads/icons8-order-history-64.png" />
-         </image>
-      </ImageView>
-            <Hyperlink fx:id="hyp01" onAction="#hyp01OnAction" text="New" textFill="WHITE" translateX="210.0" translateY="295.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink fx:id="hyp02" layoutX="225.0" layoutY="10.0" onAction="#hyp02OnAction" text="History" textFill="WHITE" translateX="430.0" translateY="295.0">
+            <Hyperlink fx:id="hyp01" onAction="#hyp01OnAction" text="New" textFill="WHITE" translateX="420.0" translateY="295.0">
          <font>
             <Font size="24.0" />
          </font>
