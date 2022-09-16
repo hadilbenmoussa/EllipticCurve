@@ -55,7 +55,7 @@ public class sharedkeyController implements Initializable{
 	    	   
 	    	   
 	         EllipticCurve e=ECDHController.curves.get(ECDHController.index);
-	         curvestring.setText("y^2 mod "+e.getP()+"= x^3 + "+e.getA()+"x^2 + " +e.getB()+" mod "+e.getP());
+	       
 	         ECPoint key= new ECPoint();
 	         key=e.multiply(e.getBasePoint(), ECDHController.sa);
 	         

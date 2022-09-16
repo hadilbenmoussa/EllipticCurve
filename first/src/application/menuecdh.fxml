@@ -13,7 +13,7 @@
             <Image url="@../images/icons8-add-file-50.png" />
          </image>
       </ImageView>
-      <Hyperlink fx:id="hyp03" onAction="#hyp03OnAction" text="New" textFill="WHITE" translateX="420.0" translateY="295.0">
+      <Hyperlink fx:id="hyp03" onAction="#hyp03OnAction" text="New" textFill="#66deeb" translateX="420.0" translateY="295.0">
          <font>
             <Font size="26.0" />
          </font>

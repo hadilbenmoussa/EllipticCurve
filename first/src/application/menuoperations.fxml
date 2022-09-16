@@ -10,10 +10,10 @@
    <children>
       <ImageView fitHeight="55.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" translateX="410.0" translateY="290.0">
          <image>
-            <Image url="@../../../../../Downloads/icons8-add-file-50.png" />
+            <Image url="@../images/icons8-add-file-50.png" />
          </image>
       </ImageView>
-            <Hyperlink fx:id="hyp01" onAction="#hyp01OnAction" text="New" textFill="WHITE" translateX="420.0" translateY="295.0">
+            <Hyperlink fx:id="hyp01" onAction="#hyp01OnAction" text="New" textFill="#66deeb" translateX="430.0" translateY="295.0">
          <font>
             <Font size="24.0" />
          </font>

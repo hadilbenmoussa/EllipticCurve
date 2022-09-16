@@ -13,39 +13,39 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="1038.0" styleClass="VBox" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.generatecommonkeyController">
    <children>
       <BorderPane fx:id="borderpane" prefHeight="574.0" prefWidth="1038.0">
-         <left>
+         <center>
             <Pane prefHeight="576.0" prefWidth="1038.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="176.0" fitWidth="200.0" layoutX="138.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="176.0" fitWidth="200.0" layoutX="97.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/girl%20(1).png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="textdes" fill="#fc6969" layoutX="39.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To create  their session key alice must multiply the public key shared by Bob with her secret key the session key will be S = a*G*b same for Bob he will reach the same key by multiplying his secret key b by the public key shared by Alice S= b*a*G" textAlignment="CENTER" wrappingWidth="933.13671875">
+                  <Text fx:id="textdes" fill="#fc6969" layoutX="67.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To create  their session key alice must multiply the public key shared by Bob with her secret key the session key will be S = a*G*b same for Bob he will reach the same key by multiplying his secret key b by the public key shared by Alice S= b*a*G" textAlignment="CENTER" wrappingWidth="933.13671875">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="skey" layoutX="132.0" layoutY="451.0" prefHeight="25.0" prefWidth="664.0" />
+                  <TextField fx:id="skey" layoutX="202.0" layoutY="451.0" prefHeight="25.0" prefWidth="664.0" />
                   <Text fill="#fc6969" layoutX="325.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="299.13671875">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <ImageView fitHeight="172.0" fitWidth="178.0" layoutX="624.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="172.0" fitWidth="178.0" layoutX="788.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/boy.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="sessionkey" layoutX="409.0" layoutY="488.0" mnemonicParsing="false" onAction="#sessionkeycalculate" text="Session Key" />
-                  <ImageView fitHeight="186.0" fitWidth="150.0" layoutX="419.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                  <Button fx:id="sessionkey" layoutX="496.0" layoutY="489.0" mnemonicParsing="false" onAction="#sessionkeycalculate" text="Session Key" />
+                  <ImageView fitHeight="186.0" fitWidth="150.0" layoutX="493.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                      <image>
                         <Image url="@../images/up-arrow.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-         </left>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

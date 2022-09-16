@@ -103,7 +103,28 @@ public GraphViewController controllerg=new GraphViewController();
     	
     	//Option 2: call "isSelected" on each of the radio buttons
     	if(small.isSelected()){
-    		 submit.fire();
+    		
+    		URL fileurl = BasicOperationsController.class.getResource("graph view"+".fxml");
+    		System.out.print(fileurl);
+    		JavaFxmlLoader2 object = new JavaFxmlLoader2();
+    		Pane view = object.getpage("graph view");
+    		 try {
+    		   		URL fileurlg = BasicOperationsController.class.getResource("graph view"+".fxml");
+    		    	 if (fileurl == null) {
+    		    	  throw new java.io.FileNotFoundException("Fxml file cannot be found");}
+    		    	  FXMLLoader loader=new FXMLLoader(fileurlg);
+    		    	  view = loader.load();
+             }
+       		 catch (Exception e)
+         		    	{
+         		    	System.out.println("No Page"+"Please check fxml loader");
+         		    	
+         		    	}
+    		addition.fire();
+    		 
+
+     
+       		mainPane.setCenter(view);
     		aval.setVisible(true);
     		bval.setVisible(true);
     		curvattlabel.setVisible(true);
@@ -259,7 +280,8 @@ public GraphViewController controllerg=new GraphViewController();
    aval.setVisible(false);
    bval.setVisible(false);	
    warning.setVisible(false);
-    	
+   curve.setVisible(false);
+	
     	};}
     		
  private void filllabels(EllipticCurve curve,EccoverfinitefieldController controller) {
@@ -329,7 +351,18 @@ public GraphViewController controllerg=new GraphViewController();
    
  
 public void Buttonsubmit(final ActionEvent event) {
-    		
+	       String as= aval.getText();
+           String bs=bval.getText();
+	       if ((as=="")||(bs=="")) {
+    	   curve.setText("Enter a and b values !!");}
+	       else {
+	        int a= Integer.parseInt(aval.getText());
+            int b=Integer.parseInt(bval.getText());
+            
+            if ((4*a*a*a+b*b==0)) {
+            	curve.setText("Enter valid a and b values !!");}
+            
+             else {
     		URL fileurl = BasicOperationsController.class.getResource("graph view"+".fxml");
     		System.out.print(fileurl);
     		JavaFxmlLoader2 object = new JavaFxmlLoader2();
@@ -341,9 +374,9 @@ public void Buttonsubmit(final ActionEvent event) {
     		    	  FXMLLoader loader=new FXMLLoader(fileurlg);
     		    	  view = loader.load();
     		          controllerg = loader.getController();
-    		          int a= Integer.parseInt(aval.getText());
-    		          int b=Integer.parseInt(bval.getText());
-    		          curve.setText(" Curve : Y^2 = X^3 + " + a+"X^2" + "+ " + b);
+    		          if (a==1) { curve.setText(" Curve : Y^2 = X^3 + " +"X^2" + "+ " + b);}
+    		          else {
+    		          curve.setText(" Curve : Y^2 = X^3 + " + a+"X^2" + "+ " + b);}
     		          controllerg.set_a(a);
     		          controllerg.set_b(b);
     		          controllerg.mathsGraph.plotLine(x ->Math.sqrt(Math.pow(x, 3)+a*x+b));
@@ -370,13 +403,9 @@ public void Buttonsubmit(final ActionEvent event) {
   
     		mainPane.setCenter(view);
  
-       
-       
+            }
      
-
-           
-      
-       
+	       }
   
      
     	

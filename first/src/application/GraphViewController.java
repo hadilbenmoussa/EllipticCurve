@@ -93,7 +93,7 @@ public Label createCursorGraphCoordsMonitorLabel(LineChart<Double, Double> lineC
 	    
 	chartBackground.addEventFilter(MouseEvent.MOUSE_CLICKED,new EventHandler<MouseEvent>(){
 	    Double Px,Qx,Py,Qy;
-	 	Button cleaning = new Button();
+	 
 	 	List<Double> pointspq = new ArrayList<>();
 	 	   
 	 	 

@@ -21,7 +21,7 @@
          <left>
             <VBox prefHeight="630.0" prefWidth="313.0" styleClass="VBox2" stylesheets="@../application/application.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleButton1Action" prefHeight="92.0" prefWidth="337.0" text="ECC Calcualtions">
+                  <Button mnemonicParsing="false" onAction="#handleButton1Action" prefHeight="92.0" prefWidth="337.0" text="ECC Calcualtions" textFill="#fffffffc">
                      <VBox.margin>
                         <Insets top="120.0" />
                      </VBox.margin>
@@ -31,22 +31,6 @@
                      <padding>
                         <Insets bottom="30.0" top="30.0" />
                      </padding>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0" startX="0.4597156398104265" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.8026315569877625" green="0.11519249528646469" blue="0.4703693687915802" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="115.0" prefWidth="313.0" text="ECDH Implementation" textFill="WHITE">
                      <font>
@@ -64,7 +48,7 @@
                         <Insets bottom="30.0" top="30.0" />
                      </padding>
                   </Button>
-                  <Label prefHeight="130.0" prefWidth="222.0" text="Released 2022" translateY="-400.0">
+                  <Label prefHeight="130.0" prefWidth="222.0" text="Released 2022" textFill="#a3a3a3e3" translateY="-400.0">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -74,22 +58,6 @@
                      <padding>
                         <Insets bottom="120.0" left="40.0" />
                      </padding>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.5657894611358643" green="0.14406676590442657" blue="0.551732063293457" opacity="0.7799999713897705" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
                   </Label>
                </children>
             </VBox>
@@ -142,47 +110,15 @@
                         <Image url="@../images/next-button.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="79.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elliptic Curves Cryptography" wrappingWidth="332.13671875">
+                  <Text fill="#fffffffc" layoutX="79.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elliptic Curves Cryptography" wrappingWidth="332.13671875">
                      <font>
                         <Font size="20.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.09478672985781988" endY="0.976303317535545" startX="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.7471369504928589" green="0.14071637392044067" blue="0.8684210777282715" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
-                  <Text layoutX="62.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualization Tool" wrappingWidth="402.13671875">
+                  <Text fill="#fffffffb" layoutX="62.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualization Tool" wrappingWidth="402.13671875">
                      <font>
                         <Font size="47.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.09478672985781988" endY="0.976303317535545" startX="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.07523148506879807" green="0.23123781383037567" blue="0.8552631735801697" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
                   <Text layoutX="702.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitcoin Transactions" wrappingWidth="182.13671875">
                      <font>
@@ -198,54 +134,22 @@
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.9078947305679321" green="0.06725145876407623" blue="0.4595516622066498" />
+                                    <Color red="0.4000000059604645" green="0.8705882430076599" blue="0.9215686321258545" />
                                  </color>
                               </Stop>
                            </stops>
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <Text layoutX="423.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Less bits More Performance" wrappingWidth="207.13671875">
+                  <Text fill="#66deebfc" layoutX="423.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Less bits More Performance" wrappingWidth="207.13671875">
                      <font>
                         <Font size="23.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.8957345971563981" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.47843137383461" green="0.3803921639919281" blue="0.6509804129600525" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
-                  <Text layoutX="522.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="secp 256k1" wrappingWidth="207.13671875">
+                  <Text fill="#66deeb" layoutX="522.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="secp 256k1" wrappingWidth="207.13671875">
                      <font>
                         <Font size="23.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.8957345971563981" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9868420958518982" green="0.2284356653690338" blue="0.8225207328796387" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
                   <Text layoutX="412.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="secp112r1" wrappingWidth="165.13671875">
                      <font>
@@ -261,54 +165,22 @@
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                    <Color red="0.4000000059604645" green="0.8705882430076599" blue="0.9215686321258545" opacity="0.9900000095367432" />
                                  </color>
                               </Stop>
                            </stops>
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <Text layoutX="658.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encryption" wrappingWidth="207.13671875">
+                  <Text fill="#67e0eb" layoutX="658.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encryption" wrappingWidth="207.13671875">
                      <font>
                         <Font size="14.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.09478672985781988" endY="0.4834123222748815" startX="0.23222748815165878">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9078947305679321" green="0.06725145876407623" blue="0.4595516622066498" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
-                  <Text layoutX="322.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decryption" wrappingWidth="117.13671875">
+                  <Text fill="#66deebfc" layoutX="322.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decryption" wrappingWidth="117.13671875">
                      <font>
                         <Font size="14.0" />
                      </font>
-                     <fill>
-                        <LinearGradient endX="0.09478672985781988" endY="0.4834123222748815" startX="0.23222748815165878">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9882352948188782" green="0.9803921580314636" blue="0.9803921580314636" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.9078947305679321" green="0.06725145876407623" blue="0.4595516622066498" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
                   </Text>
                </children>
             </Pane>
